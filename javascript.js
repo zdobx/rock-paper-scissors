@@ -11,38 +11,43 @@ function getComputerChoice () { //computer is supposed to generate random answer
 console.log(getComputerChoice());
 
 
-function playerSelection () { //prompt player to select rock, paper or scissors.
+function playerSelection() { //prompt player to select rock, paper or scissors.
 
      let selection = prompt("What would you like to choose? Paper, rock or scissors?");
-     
+     let computerChoice = getComputerChoice();
+
      //When the computer selects rock
-     if (playerSelection === 'rock' && getComputerChoice === 'Rock') {
-     return alert("DRAW!") }  
+     if (selection === 'rock' && computerChoice === 'Rock') {
+     return alert("DRAW!"); 
      
-     else if (playerSelection === 'paper' && getComputerChoice === 'Rock') {
-     return alert("WIN!") }
-     
-     else if (playerSelection === 'scissors' && getComputerChoice === 'Rock') {
-     return alert("LOSER!")  }
+     }  
+     else if (selection === 'paper' && computerChoice === 'Rock') {
+     return alert("WIN!"); 
+     }
+     else if (playerSelection === 'scissors' && computerChoice === 'Rock') {
+     return alert("LOSER!");  
+     }
 
      //When the computer selects paper
-     if (playerSelection === 'rock' && getComputerChoice === 'Paper') {
-          return alert("LOSER!") }  
+     if (selection=== 'rock' && computerChoice === 'Paper') {
+          return alert("LOSER!"); }  
           
-          else if (playerSelection === 'paper' && getComputerChoice === 'Paper') {
-          return alert("DRAW!") }
+          else if (selection === 'paper' && computerChoice === 'Paper') {
+          return alert("DRAW!"); }
           
-          else if (playerSelection === 'scissors' && getComputerChoice === 'Paper') {
-          return alert("WINNER!")  }
+          else if (selection=== 'scissors' && computerChoice === 'Paper') {
+          return alert("WINNER!");  }
 
-}    //When the computer selects scissors
-     if (playerSelection === 'rock' && getComputerChoice === 'Scissors') {
-     return alert("WINNER!") }  
+     //When the computer selects scissors
+     if (selection === 'rock' && computerChoice === 'Scissors') {
+     return alert("WINNER!"); }  
      
-     else if (playerSelection === 'paper' && getComputerChoice === 'Scissors') {
-     return alert("LOSER!") }
+     else if (selection=== 'paper' && computerChoice === 'Scissors') {
+     return alert("LOSER!"); }
      
-     else if (playerSelection === 'scissors' && getComputerChoice === 'Scissors') {
-     return alert("DRAW!")  }
+     else if (selection === 'scissors' && computerChoice === 'Scissors') {
+     return alert("DRAW!");  }
 
-prompt(playerSelection())
+}
+
+playerSelection();
