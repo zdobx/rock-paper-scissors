@@ -1,4 +1,3 @@
-
 function getComputerChoice () { //computer is supposed to generate random answer.
      
      const choices = ['Rock', 'Paper', 'Scissors'];
@@ -8,20 +7,14 @@ function getComputerChoice () { //computer is supposed to generate random answer
 
 }
 
-console.log(getComputerChoice());
-
-
-function playerSelection() { //prompt player to select rock, paper or scissors.
-
-     let selection = prompt("What would you like to choose? Paper, rock or scissors?");
-     let computerChoice = getComputerChoice();
+function playRound(playerSelection, computerChoice) {
 
      //When the computer selects rock
-     if (selection === 'rock' && computerChoice === 'Rock') {
+     if (playerSelection === 'rock' && computerChoice === 'Rock') {
      return alert("DRAW!"); 
      
      }  
-     else if (selection === 'paper' && computerChoice === 'Rock') {
+     else if (playerSelection === 'paper' && computerChoice === 'Rock') {
      return alert("WIN!"); 
      }
      else if (playerSelection === 'scissors' && computerChoice === 'Rock') {
@@ -29,25 +22,40 @@ function playerSelection() { //prompt player to select rock, paper or scissors.
      }
 
      //When the computer selects paper
-     if (selection=== 'rock' && computerChoice === 'Paper') {
+     if (playerSelection=== 'rock' && computerChoice === 'Paper') {
           return alert("LOSER!"); }  
           
-          else if (selection === 'paper' && computerChoice === 'Paper') {
+          else if (playerSelection === 'paper' && computerChoice === 'Paper') {
           return alert("DRAW!"); }
           
-          else if (selection=== 'scissors' && computerChoice === 'Paper') {
+          else if (playerSelection=== 'scissors' && computerChoice === 'Paper') {
           return alert("WINNER!");  }
 
      //When the computer selects scissors
-     if (selection === 'rock' && computerChoice === 'Scissors') {
+     if (playerSelection === 'rock' && computerChoice === 'Scissors') {
      return alert("WINNER!"); }  
      
-     else if (selection=== 'paper' && computerChoice === 'Scissors') {
+     else if (playerSelection=== 'paper' && computerChoice === 'Scissors') {
      return alert("LOSER!"); }
      
-     else if (selection === 'scissors' && computerChoice === 'Scissors') {
+     else if (playerSelection === 'scissors' && computerChoice === 'Scissors') {
      return alert("DRAW!");  }
 
 }
 
-playerSelection();
+function playerSelection() { //prompt player to select rock, paper or scissors.
+
+     let selection = prompt("What would you like to choose? Paper, rock or scissors?").toLowerCase();
+     let computerChoice = getComputerChoice();
+
+     return playRound(selection, computerChoice);
+
+}
+
+
+   console.log(playerSelection());
+
+
+   //The output is undefined because in the playerSelection function, you are logging the return value of the playRound function, but the playRound function does not return anything. 
+   //The alert function does not return a value, so the playRound function returns undefined. 
+   //To fix this, you can change the alert calls in the playRound function to return statements, and return a string that describes the result of the round.
