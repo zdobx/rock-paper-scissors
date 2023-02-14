@@ -6,35 +6,35 @@ function playRound() {
 
      //When the computer selects rock
      if (playerSelectionFinal === 'rock' && getComputerChoiceFinal === 'Rock') {
-          alert("DRAW!"); 
+          console.log("DRAW!"); 
           
           }  
           else if (playerSelectionFinal === 'paper' && getComputerChoiceFinal === 'Rock') {
-          alert("WIN!"); 
+          console.log("WIN!"); 
           }
           else if (playerSelectionFinal === 'scissors' && getComputerChoiceFinal === 'Rock') {
-          alert("LOSER!");  
+          console.log("LOSER!");  
           }
      
           //When the computer selects paper
           if (playerSelectionFinal === 'rock' && getComputerChoiceFinal === 'Paper') {
-               alert("LOSER!"); }  
+                    console.log("LOSER!"); }  
                
                else if (playerSelectionFinal === 'paper' && getComputerChoiceFinal === 'Paper') {
-               alert("DRAW!"); }
+                    console.log("DRAW!"); }
                
                else if (playerSelectionFinal === 'scissors' && getComputerChoiceFinal === 'Paper') {
-               alert("WINNER!");  }
+                    console.log("WINNER!");  }
      
           //When the computer selects scissors
           if (playerSelectionFinal === 'rock' && getComputerChoiceFinal === 'Scissors') {
-          alert("WINNER!"); }  
+               console.log("WINNER!"); }  
           
           else if (playerSelectionFinal === 'paper' && getComputerChoiceFinal === 'Scissors') {
-          alert("LOSER!"); }
+               console.log("LOSER!"); }
           
           else if (playerSelectionFinal === 'scissors' && getComputerChoiceFinal === 'Scissors') {
-          alert("DRAW!");  }
+               console.log("DRAW!");  }
 
      return `${playerSelectionFinal} vs ${getComputerChoiceFinal}`;
 
