@@ -55,3 +55,15 @@ function playerSelection() { //prompt player to select rock, paper or scissors.
 }
 
 console.log(playRound());
+
+
+function game () {   //Play a 5 round game of paper scissors rock. 
+
+     for (let i = 1; i <= 5; i++) {
+          const result = playRound();
+          console.log(`Round ${i}: ${result}`);
+     }
+
+}
+
+console.log(game());
