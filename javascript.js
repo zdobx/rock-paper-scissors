@@ -11,6 +11,16 @@ const headerContainer = document.getElementById('headerContainer');
 const h1 = headerContainer.querySelector('h1');
 h1.style.textAlign = 'center';
 
+// Header for results
+const resultHeader = document.getElementById('resultHeader');
+const h3 = resultHeader.querySelector('h1');
+h3.style.textAlign = 'center';
+
+// Results
+const results = document.getElementById('results');
+const h2 = results.querySelector('h1');
+h2.style.textAlign = 'center';
+
 // Rock button
 const rockButton = document.createElement('button');
 rockButton.textContent = 'Rock';
@@ -28,6 +38,8 @@ paperButton.style.padding = '50px';
 paperButton.style.borderRadius = '40px'; 
 paperButton.style.fontSize = '30px';
 btnContainer.appendChild(paperButton);
+// Add event listener for 'click' of paper button
+paperButton.addEventListener("click", playRound);
 
 // Scissor button
 const scissorButton = document.createElement('button');
@@ -36,6 +48,8 @@ scissorButton.style.padding = '50px';
 scissorButton.style.borderRadius = '40px'; 
 scissorButton.style.fontSize = '30px';
 btnContainer.appendChild(scissorButton);
+// Add event listener for 'scissor' of rock button
+scissorButton.addEventListener("click", playRound);
 
 
 // Include event listener to the buttons that call playRound and playerSelection
@@ -48,37 +62,38 @@ function playRound() {
 
      //When the computer selects rock
      if (playerSelectionFinal === rockButton && getComputerChoiceFinal === 'Rock') {
-          console.log("DRAW!"); 
-          
+          h2.innerHTML = "DRAW!"; 
           }  
           else if (playerSelectionFinal === paperButton && getComputerChoiceFinal === 'Rock') {
-          console.log("WIN!"); 
+            h2.innerHTML= "WIN!"; 
           }
           else if (playerSelectionFinal === scissorButton && getComputerChoiceFinal === 'Rock') {
-          console.log("LOSER!");  
+            h2.innerHTML = "LOSER!";  
           }
      
           //When the computer selects paper
           if (playerSelectionFinal === rockButton && getComputerChoiceFinal === 'Paper') {
-                    console.log("LOSER!"); }  
+            h2.innerHTML = "LOSER!"; }  
                
                else if (playerSelectionFinal === paperButton && getComputerChoiceFinal === 'Paper') {
-                    console.log("DRAW!"); }
+                h2.innerHTML= "DRAW!"; }
                
                else if (playerSelectionFinal === scissorButton && getComputerChoiceFinal === 'Paper') {
-                    console.log("WINNER!");  }
+                h2.innerHTML= "WINNER!";  }
      
           //When the computer selects scissors
           if (playerSelectionFinal === rockButton && getComputerChoiceFinal === 'Scissors') {
-               console.log("WINNER!"); }  
+            h2.innerHTML = "WINNER!"; }  
           
           else if (playerSelectionFinal === paperButton && getComputerChoiceFinal === 'Scissors') {
-               console.log("LOSER!"); }
+            h2.innerHTML= "LOSER!"; }
           
           else if (playerSelectionFinal === scissorButton && getComputerChoiceFinal === 'Scissors') {
-               console.log("DRAW!");  }
+            h2.innerHTML = "DRAW!";  }
 
-     return `${playerSelectionFinal} vs ${getComputerChoiceFinal}`;
+            console.log(h2.innerHTML);
+
+    //  return `${playerSelectionFinal} vs ${getComputerChoiceFinal}`;
 
 }
 
@@ -92,23 +107,23 @@ function getComputerChoice () { //computer is supposed to generate random answer
 
 function playerSelection() { //prompt player to select rock, paper or scissors.
 
-     let selection = (rockButton, paperButton, scissorButton);
-     return selection;
+  let selection = (rockButton, paperButton, scissorButton);
+  return selection;
 }
 
-console.log(playRound());
+// console.log(playRound());
 
 
-function game () {   //Play a 5 round game of paper scissors rock. 
+// function game () {   //Play a 5 round game of paper scissors rock. 
 
-     for (let i = 1; i <= 5; i++) {
-          const result = playRound();
-          console.log(`Round ${i}: ${result}`);
-     }
+//      for (let i = 1; i <= 5; i++) {
+//           const result = playRound();
+//           console.log(`Round ${i}: ${result}`);
+//      }
 
-}
+// }
 
-console.log(game());
+// console.log(game());
 
 
 
