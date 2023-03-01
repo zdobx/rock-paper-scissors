@@ -1,8 +1,4 @@
 // Create three buttons, one for paper, one for rock, and one for scissors
-
-
-
-
 const btnContainer = document.getElementById('btnContainer');
 
 btnContainer.style.display = 'flex';
@@ -15,7 +11,6 @@ const headerContainer = document.getElementById('headerContainer');
 const h1 = headerContainer.querySelector('h1');
 h1.style.textAlign = 'center';
 
-
 // Rock button
 const rockButton = document.createElement('button');
 rockButton.textContent = 'Rock';
@@ -23,6 +18,8 @@ rockButton.style.padding = '50px';
 rockButton.style.borderRadius = '40px'; 
 rockButton.style.fontSize = '30px';
 btnContainer.appendChild(rockButton);
+// Add event listener for 'click' of rock button
+rockButton.addEventListener("click", playRound);
 
 // Paper button
 const paperButton = document.createElement('button');
@@ -41,98 +38,77 @@ scissorButton.style.fontSize = '30px';
 btnContainer.appendChild(scissorButton);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Include event listener to the buttons that call playRound and playerSelection
 
 
+function playRound() {
 
+     const playerSelectionFinal = playerSelection();
+     const getComputerChoiceFinal = getComputerChoice();
 
-
-
-
-
-// function playRound() {
-
-//      const playerSelectionFinal = playerSelection();
-//      const getComputerChoiceFinal = getComputerChoice();
-
-//      //When the computer selects rock
-//      if (playerSelectionFinal === 'rock' && getComputerChoiceFinal === 'Rock') {
-//           console.log("DRAW!"); 
+     //When the computer selects rock
+     if (playerSelectionFinal === rockButton && getComputerChoiceFinal === 'Rock') {
+          console.log("DRAW!"); 
           
-//           }  
-//           else if (playerSelectionFinal === 'paper' && getComputerChoiceFinal === 'Rock') {
-//           console.log("WIN!"); 
-//           }
-//           else if (playerSelectionFinal === 'scissors' && getComputerChoiceFinal === 'Rock') {
-//           console.log("LOSER!");  
-//           }
+          }  
+          else if (playerSelectionFinal === paperButton && getComputerChoiceFinal === 'Rock') {
+          console.log("WIN!"); 
+          }
+          else if (playerSelectionFinal === scissorButton && getComputerChoiceFinal === 'Rock') {
+          console.log("LOSER!");  
+          }
      
-//           //When the computer selects paper
-//           if (playerSelectionFinal === 'rock' && getComputerChoiceFinal === 'Paper') {
-//                     console.log("LOSER!"); }  
+          //When the computer selects paper
+          if (playerSelectionFinal === rockButton && getComputerChoiceFinal === 'Paper') {
+                    console.log("LOSER!"); }  
                
-//                else if (playerSelectionFinal === 'paper' && getComputerChoiceFinal === 'Paper') {
-//                     console.log("DRAW!"); }
+               else if (playerSelectionFinal === paperButton && getComputerChoiceFinal === 'Paper') {
+                    console.log("DRAW!"); }
                
-//                else if (playerSelectionFinal === 'scissors' && getComputerChoiceFinal === 'Paper') {
-//                     console.log("WINNER!");  }
+               else if (playerSelectionFinal === scissorButton && getComputerChoiceFinal === 'Paper') {
+                    console.log("WINNER!");  }
      
-//           //When the computer selects scissors
-//           if (playerSelectionFinal === 'rock' && getComputerChoiceFinal === 'Scissors') {
-//                console.log("WINNER!"); }  
+          //When the computer selects scissors
+          if (playerSelectionFinal === rockButton && getComputerChoiceFinal === 'Scissors') {
+               console.log("WINNER!"); }  
           
-//           else if (playerSelectionFinal === 'paper' && getComputerChoiceFinal === 'Scissors') {
-//                console.log("LOSER!"); }
+          else if (playerSelectionFinal === paperButton && getComputerChoiceFinal === 'Scissors') {
+               console.log("LOSER!"); }
           
-//           else if (playerSelectionFinal === 'scissors' && getComputerChoiceFinal === 'Scissors') {
-//                console.log("DRAW!");  }
+          else if (playerSelectionFinal === scissorButton && getComputerChoiceFinal === 'Scissors') {
+               console.log("DRAW!");  }
 
-//      return `${playerSelectionFinal} vs ${getComputerChoiceFinal}`;
+     return `${playerSelectionFinal} vs ${getComputerChoiceFinal}`;
 
-// }
+}
 
-// function getComputerChoice () { //computer is supposed to generate random answer.
+function getComputerChoice () { //computer is supposed to generate random answer.
      
-//      const choices = ['Rock', 'Paper', 'Scissors'];
-//      const choice = Math.floor(Math.random() * choices.length);
-//      return choices[choice];
+     const choices = ['Rock', 'Paper', 'Scissors'];
+     const choice = Math.floor(Math.random() * choices.length);
+     return choices[choice];
 
-// }
+}
 
-// function playerSelection() { //prompt player to select rock, paper or scissors.
+function playerSelection() { //prompt player to select rock, paper or scissors.
 
-//      let selection = prompt("What would you like to choose? Paper, rock or scissors?").toLowerCase();
-//      return selection;
-// }
+     let selection = (rockButton, paperButton, scissorButton);
+     return selection;
+}
 
-// console.log(playRound());
+console.log(playRound());
 
 
-// // function game () {   //Play a 5 round game of paper scissors rock. 
+function game () {   //Play a 5 round game of paper scissors rock. 
 
-// //      for (let i = 1; i <= 5; i++) {
-// //           const result = playRound();
-// //           console.log(`Round ${i}: ${result}`);
-// //      }
+     for (let i = 1; i <= 5; i++) {
+          const result = playRound();
+          console.log(`Round ${i}: ${result}`);
+     }
 
-// // }
+}
 
-// console.log(game());
+console.log(game());
 
 
 
