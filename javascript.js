@@ -21,6 +21,34 @@ const results = document.getElementById('results');
 const h2 = results.querySelector('h1');
 h2.style.textAlign = 'center';
 
+// playerScore
+const playerScore = document.getElementById('playerScore');
+const countPlayerScore = playerScore.querySelector('h2');
+playerScore.style.display = 'flex';
+playerScore.style.justifyContent = 'space-around';
+playerScore.style.background = 'orange';
+
+// computerScore
+const computerScore = document.getElementById('computerScore');
+const countComputerScore = computerScore.querySelector('h2');
+computerScore.style.display = 'flex';
+computerScore.style.justifyContent = 'space-around';
+computerScore.style.background = 'blue';
+
+//Score counter
+const tally = document.getElementById('playerResult');
+const playerTally = tally.querySelector('a');
+tally.style.textAlign = 'center';
+
+const secondTally = document.getElementById('computerResult');
+const computerTally = secondTally.querySelector('a');
+secondTally.style.textAlign = 'center';
+
+let count = 0;
+tally.innerHTML = count;
+secondTally.innerHTML = count;
+
+
 // Rock button
 const rockButton = document.createElement('button');
 rockButton.textContent = 'Rock';
@@ -52,7 +80,12 @@ btnContainer.appendChild(scissorButton);
 scissorButton.addEventListener("click", playRound);
 
 
+
+
+
 // Include event listener to the buttons that call playRound and playerSelection
+
+
 
 
 function playRound() {
@@ -62,9 +95,11 @@ function playRound() {
 
      //When the computer selects rock
      if (playerSelectionFinal === rockButton && getComputerChoiceFinal === 'Rock') {
-          h2.innerHTML = "DRAW!"; 
+            h2.innerHTML = "DRAW!"; 
           }  
           else if (playerSelectionFinal === paperButton && getComputerChoiceFinal === 'Rock') {
+            count+=1;
+            document.getElementById("tally").innerHTML= count;
             h2.innerHTML= "WIN!"; 
           }
           else if (playerSelectionFinal === scissorButton && getComputerChoiceFinal === 'Rock') {
@@ -111,7 +146,10 @@ function playerSelection() { //prompt player to select rock, paper or scissors.
   return selection;
 }
 
-// console.log(playRound());
+console.log(playRound());
+
+
+
 
 
 // function game () {   //Play a 5 round game of paper scissors rock. 
